@@ -67,6 +67,18 @@
 			<version>${version.oltu}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.oltu.oauth2</groupId>
+			<artifactId>org.apache.oltu.oauth2.client</artifactId>
+			<version>${version.oltu}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.oltu.oauth2</groupId>
+			<artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
+			<version>${version.oltu}</version>
+		</dependency>
+
 		<!-- jUnit -->
 		<dependency>
 			<groupId>junit</groupId>

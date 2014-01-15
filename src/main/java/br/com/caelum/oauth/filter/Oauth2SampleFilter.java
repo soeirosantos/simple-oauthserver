@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -31,7 +33,6 @@ import org.apache.oltu.oauth2.rs.response.OAuthRSResponse;
 
 /**
  * Sample Filter for be used in a resource server
- * This Filter doesn't make sense in this context. It's just a sample
  */
 
 @WebFilter("/*")
@@ -39,7 +40,7 @@ public class Oauth2SampleFilter implements Filter {
 
 	private static final String OAUTH_SERVER_URL = "http://localhost:8080/oauth-server/";
 	private static String RESOURCE_SERVER_NAME = "pagamentos";
-	
+		
     @Override
 	public void destroy() {	}
 
@@ -86,8 +87,7 @@ public class Oauth2SampleFilter implements Filter {
 				
 			} catch (OAuthSystemException e1) {
 				
-				//XXX loga erro
-				e1.printStackTrace();
+				Logger.getLogger(getClass().getName()).log(Level.SEVERE, "error trying to handle oauth problem", e1);
 			
 			}
 		
@@ -109,7 +109,7 @@ public class Oauth2SampleFilter implements Filter {
 
 		} catch (URISyntaxException | MalformedURLException e) {
 	
-			e.printStackTrace();
+			Logger.getLogger(getClass().getName()).log(Level.SEVERE, "error trying to access oauth server", e);
 		
 		}
 		return validToken;

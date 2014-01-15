@@ -2,6 +2,8 @@ package br.com.caelum.oauth.endpoints;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,14 +15,16 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 /**
- * Para um exemplo mais próximo de uma situação real, 
- * utilizando autenticação via browser p. ex.,
- * este endpoint deve estar localizado no client
+ * This endpoint should be in the client
+ * to receive the browser redirect and
+ * get auth code information
  *
  */
 @Path("/redirect")
 public class RedirectEndpoint {
 
+	private Logger log = Logger.getLogger(this.getClass().getName());
+	
     @Context
     HttpHeaders httpHeaders;
     
@@ -34,7 +38,7 @@ public class RedirectEndpoint {
         JSONObject headers = new JSONObject(); 
         JSONObject queryParameteres = new JSONObject();
         
-        String json = "error!";
+        String json = "error trying to receive auth code";
         
         try {
             for (Map.Entry<String, List<String>> entry : httpHeaders.getRequestHeaders().entrySet()) {
@@ -52,7 +56,7 @@ public class RedirectEndpoint {
             
         } catch (JSONException ex) {
         
-        	ex.printStackTrace();
+        	log.log(Level.SEVERE, json, ex);
         
         }
         
