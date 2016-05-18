@@ -50,6 +50,12 @@
 		</dependency>
 
 		<dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+		    <artifactId>resteasy-client</artifactId>
+			<version>${version.resteasy}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
 			<artifactId>jetty-all</artifactId>
 			<version>9.0.2.v20130417</version>
@@ -78,6 +84,7 @@
 			<artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
 			<version>${version.oltu}</version>
 		</dependency>
+
 
 		<!-- jUnit -->
 		<dependency>

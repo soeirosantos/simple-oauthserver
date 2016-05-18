@@ -11,7 +11,7 @@ public class ServerParams {
 	public static String USERNAME = "fake_user";
 	public static String PASSWORD = "passwd";
 	
-	public static final String OAUTH_SERVER_URL = "http://localhost:8080/oauth-server/";
+	public static final String OAUTH_SERVER_URL = "http://localhost:8080/";
 	public static final String RESOURCE_SERVER_URL = "http://localhost:8080/resource-server/";
 
 }

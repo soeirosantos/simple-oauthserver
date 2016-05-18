@@ -35,10 +35,10 @@ import org.apache.oltu.oauth2.rs.response.OAuthRSResponse;
  * Sample Filter for be used in a resource server
  */
 
-@WebFilter("/*")
+@WebFilter("/resources/*")
 public class Oauth2SampleFilter implements Filter {
 
-	private static final String OAUTH_SERVER_URL = "http://localhost:8080/oauth-server/";
+	private static final String OAUTH_SERVER_URL = "http://localhost:8080/";
 	private static String RESOURCE_SERVER_NAME = "pagamentos";
 		
     @Override
