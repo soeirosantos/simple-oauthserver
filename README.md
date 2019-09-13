@@ -1,7 +1,9 @@
+**WARNING:** Apache Oltu is no longer an active project. So, don't consider the implementation on this repo for anything real. Though, this repo is still relevant if you want to understand the OAuth2 flow in details.
+
 simple-oauthserver
 ==================
 
-Simple Oauth2 Server example on top of Reaseasy and Apache Oltu.
+Simple Oauth2 Server example on top of Resteasy and Apache Oltu.
 
 This code was based on Apache Oltu documentation and integration tests.
 
